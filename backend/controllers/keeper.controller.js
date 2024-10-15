@@ -38,6 +38,7 @@ export const updateNote = async (req, res) => {
     const note = req.body;
     try {
         const updatedNote = await Keeper.findByIdAndUpdate(id, note, { new: true });
+        if (!updatedNote) return res.status(404).json({ success: false, message: "Note not found" });
         res.status(200).json({ success: true, data: updatedNote });
     } catch (error) {
         console.error("Error updating note", error.message);
@@ -54,7 +55,8 @@ export const deleteNote = async (req, res) => {
     };
 
     try {
-        await Keeper.findByIdAndDelete(id);
+        const isDeleted = await Keeper.findByIdAndDelete(id);
+        if (!isDeleted) return res.status(404).json({ success: false, message: "Note not found" });
         res.status(200).json({ success: true, message: "Note deleted" });
     } catch (error) {
         console.error("Error in deleting note", error.message);
