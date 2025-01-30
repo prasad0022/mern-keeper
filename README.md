@@ -16,9 +16,9 @@ A simple note-taking app inspired by Google Keep, built using the MERN stack.
 
 ## API Endpoints
 
-- **GET: /api/notes** - Get all notes
-- **POST: /api/notes** - Create a new note
-- **PUT: /api/notes/:id** - Update a note
-- **DELETE: /api/notes/:id** - Delete a note
+- **GET: /api/keeper** - Get all notes
+- **POST: /api/keeper** - Create a new note
+- **PUT: /api/keeper/:id** - Update a note
+- **DELETE: /api/keeper/:id** - Delete a note
 
 Let me know if you need any modifications! 🚀
